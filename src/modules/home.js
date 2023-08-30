@@ -1,4 +1,4 @@
-import { createElement, appendElementToParent } from "./pageload";
+import { createElement } from "./pageload";
 
 const homeContent = () => {
     let mainElement = document.querySelector('main');

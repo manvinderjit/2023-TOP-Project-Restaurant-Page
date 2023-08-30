@@ -1,3 +1,5 @@
+import { homeContent } from "./home";
+
 const rootElement = document.body;
 const navMenuItems = ['Home', 'Menu', 'Contact Us'];
 
@@ -13,38 +15,34 @@ const createElement = (element, className, id) => {
     return newElement;
 }
 
-const appendElementToParent = (child, parent) => {
-    parent.appendChild(child);
-}
-
 const generateBasicHtmlStructure = () => {
     
     let divHeader = createElement("header");
-    appendElementToParent(divHeader, rootElement);    
+    rootElement.appendChild(divHeader);    
     
     buildHeader(divHeader);
 
-    let divContainer = createElement("main");
-    appendElementToParent(divContainer, rootElement);
+    let mainContainer = createElement("main");
+    rootElement.appendChild(mainContainer);    
 
     let divFooter = createElement("footer");
-    appendElementToParent(divFooter, rootElement);    
+    rootElement.appendChild(divFooter);    
 
 }
 
 const buildHeader = (divHeader) => {
 
     let divHeaderLogo = createElement("div", "header-logo");
-    appendElementToParent(divHeaderLogo, divHeader);
+    divHeader.appendChild(divHeaderLogo);    
 
     let divHeaderLogoText = createElement("div", "header-logo-text");
     divHeaderLogoText.textContent = "Awesome Restaurant";
-    appendElementToParent(divHeaderLogoText, divHeaderLogo);
+    divHeaderLogo.appendChild(divHeaderLogoText);    
 
     let divHeaderMenu = createElement("nav", "header-nav");
-    appendElementToParent(divHeaderMenu, divHeader);
-
-    appendElementToParent(buildHeaderNavMenu(), divHeaderMenu);
+    divHeader.appendChild(divHeaderMenu);
+    
+    divHeaderMenu.appendChild(buildHeaderNavMenu());    
     
 }
 
@@ -62,6 +60,7 @@ const buildHeaderNavMenu = () => {
 
 const pageLoad = () => {   
     generateBasicHtmlStructure();
+    homeContent();
 }
 
-export { createElement, appendElementToParent, pageLoad };
+export { createElement, pageLoad };
