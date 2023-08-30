@@ -61,10 +61,13 @@ const buildHeaderNavMenu = () => {
     return navWrapper;    
 }
 
-const pageLoad = () => {   
+const mainContent = (contentModule) => {
+    console.log(contentModule);
+}
 
+const pageLoad = () => {   
     generateBasicHtmlStructure();
     
 }
 
-export { pageLoad };
+export { createElement, appendElementToParent, mainContent, pageLoad };
