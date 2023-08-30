@@ -26,24 +26,16 @@ const generateBasicHtmlStructure = () => {
     rootElement.appendChild(mainContainer);    
 
     let divFooter = createElement("footer");
+    divFooter.textContent = `Copright @ Awesome Restuarant by Manvinderjit`;
     rootElement.appendChild(divFooter);    
-
 }
 
 const buildHeader = (divHeader) => {
 
-    let divHeaderLogo = createElement("div", "header-logo");
-    divHeader.appendChild(divHeaderLogo);    
-
-    let divHeaderLogoText = createElement("div", "header-logo-text");
-    divHeaderLogoText.textContent = "Awesome Restaurant";
-    divHeaderLogo.appendChild(divHeaderLogoText);    
-
     let divHeaderMenu = createElement("nav", "header-nav");
-    divHeader.appendChild(divHeaderMenu);
-    
+    divHeader.appendChild(divHeaderMenu);    
     divHeaderMenu.appendChild(buildHeaderNavMenu());    
-    
+
 }
 
 const buildHeaderNavMenu = () => {
@@ -58,7 +50,18 @@ const buildHeaderNavMenu = () => {
     return navWrapper;    
 }
 
+const buildFooterAttributionsList = () => {
+
+    let content = `<a href="https://www.freepik.com/free-photo/interior-shot-cafe-with-chairs-near-bar-with-wooden-tables_7810365.htm#query=restaurant&position=49&from_view=search&track=sph">Image by wirestock</a> on Freepik`;
+
+    // https://icons8.com/icon/37113/restaurant-table
+    // <a target="_blank" href="https://icons8.com/icon/zWddXTfH7ZRf/restaurant">Dine</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+    return content;
+
+}
+
 const pageLoad = () => {   
+    
     generateBasicHtmlStructure();
     homeContent();
 }
