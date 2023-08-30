@@ -1,30 +1,22 @@
-import { mainContent, pageLoad } from "./modules/pageload";
+import { pageLoad } from "./modules/pageload";
 import './style.css';
-import { menu_1 } from "./modules/menu-1";
-import { menu_2 } from "./modules/menu-2";
+import { homeContent } from "./modules/home";
+import { menuContent } from "./modules/menu";
+import { contactUsContent } from "./modules/contact-us";
 
 pageLoad();
 
-const menuItems = document.querySelectorAll(".navMenuItem")
-// console.log(menuItems);
-
-const getTabContent = (elementID) => {
-    if(elementID == "menu-1") {
-        return menu_1();
-    } else if (elementID == "menu-2"){
-        return menu_2();
-    } else if (elementID == "menu-2"){
-        return menu_2();
-    } else {
-        return menu_2();
-    }
-}
-
-menuItems.forEach((element) => {
-    element.addEventListener('click' , () => {
-        let mainElement = document.querySelector('main');
-        mainElement.textContent = "";
-        mainElement.appendChild(getTabContent(element.id));        
-    })
+const homeTab = document.getElementById("home");
+homeTab.addEventListener('click', () => {
+    homeContent();
 });
 
+const menuTab = document.getElementById("menu");
+menuTab.addEventListener('click', () => {
+    menuContent();
+});
+
+const contactUsTab = document.getElementById("contact-us");
+contactUsTab.addEventListener('click', () => {    
+    contactUsContent();
+});

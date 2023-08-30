@@ -1,6 +1,5 @@
 const rootElement = document.body;
-const navMenuItems = ['Menu 1', 'Menu 2', 'Menu 3', 'Menu 4'];
-
+const navMenuItems = ['Home', 'Menu', 'Contact Us'];
 
 const createElement = (element, className, id) => {
     let newElement = document.createElement(element);    
@@ -61,13 +60,8 @@ const buildHeaderNavMenu = () => {
     return navWrapper;    
 }
 
-const mainContent = (contentModule) => {
-    console.log(contentModule);
-}
-
 const pageLoad = () => {   
     generateBasicHtmlStructure();
-    
 }
 
-export { createElement, appendElementToParent, mainContent, pageLoad };
+export { createElement, appendElementToParent, pageLoad };
