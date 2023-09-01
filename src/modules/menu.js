@@ -45,10 +45,10 @@ const menuContent = () => {
 
 const createHeroImgSection = () => {
 
-    let divMenuHeroImg = createElement("div", "menu-hero-img");
+    const divMenuHeroImg = createElement("div", "menu-hero-img");
     divMenuHeroImg.style.backgroundImage = `url(${MenuImg})`;
     
-    let divMenuHeroHeading = createElement("h1", "menu-hero-heading");
+    const divMenuHeroHeading = createElement("h1", "menu-hero-heading");
     divMenuHeroHeading.textContent = "Awesome Restaurant's Menu";
     divMenuHeroImg.appendChild(divMenuHeroHeading);
     return divMenuHeroImg;
@@ -68,7 +68,7 @@ const createMenuContainerWithContent = () => {
 
     const divMenuContainer = createElement("div", "menu-container");
 
-    for(let menuSections in menuData) {
+    for(const menuSections in menuData) {
         const divMenuContainerCard = createDivMenuContainerCard(menuSections, menuData[menuSections]);
         divMenuContainer.appendChild(divMenuContainerCard);      
     }
@@ -81,7 +81,7 @@ const createDivMenuContainerCard = (heading, itemsArray) => {
     
     const divMenuContainerCard = createElement("div", "menu-container-card");
 
-    let divMenuCardHeading = createElement("h2", "menu-h2");
+    const divMenuCardHeading = createElement("h2", "menu-h2");
     divMenuCardHeading.textContent = heading;
     divMenuContainerCard.appendChild(divMenuCardHeading);
 
