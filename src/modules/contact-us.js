@@ -18,6 +18,9 @@ const contactUsContent = () => {
     
     const contactContentSection = createContactContentSection();
     mainElement.appendChild(contactContentSection);
+
+    const attributionSection = createAttributionSection();
+    mainElement.appendChild(attributionSection);
 }
 
 const createContactHeroImgSection = () => {
@@ -138,7 +141,22 @@ const createLabelInputPairListItem = (inputType, inputHtmlType, inputId) => {
 
 }
 
-// Image by <a href="https://www.freepik.com/free-photo/top-view-chat-bubbles-with-telephone-receiver-copy-space_11684257.htm#query=contact%20us&position=0&from_view=search&track=ais">Freepik</a>
+const createAttributionSection = () => {
 
+    const divAttributionSection = createElement("div", "contact-attribution-section");
+
+    const divAttributionSectionHeading = createElement("h2", "contact-attribution-h2");
+    divAttributionSectionHeading.textContent = "Attributions:";
+    divAttributionSection.appendChild(divAttributionSectionHeading);
+
+    const divAttributionList = createElement("ol", "contact-attribution-list");
+    const divAttributionListItem = createElement("li", "contact-attribution-list-item");
+    divAttributionListItem.innerHTML = `Hero Image: Image by <a href="https://www.freepik.com/free-photo/top-view-chat-bubbles-with-telephone-receiver-copy-space_11684257.htm">Freepik</a>`;
+    divAttributionList.appendChild(divAttributionListItem);
+    divAttributionSection.appendChild(divAttributionList);
+
+    return divAttributionSection;
+
+}
 
 export { contactUsContent };
