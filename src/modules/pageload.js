@@ -1,6 +1,5 @@
 import { homeContent } from "./home";
 
-const rootElement = document.body;
 const navMenuItems = ['Home', 'Menu', 'Contact Us'];
 
 const createElement = (element, className, id) => {
@@ -18,16 +17,16 @@ const createElement = (element, className, id) => {
 const generateBasicHtmlStructure = () => {
     
     let divHeader = createElement("header");
-    rootElement.appendChild(divHeader);    
+    document.body.appendChild(divHeader);    
     
     buildHeader(divHeader);
 
     let mainContainer = createElement("main");
-    rootElement.appendChild(mainContainer);    
+    document.body.appendChild(mainContainer);    
 
     let divFooter = createElement("footer");
     divFooter.textContent = `Copright @ Awesome Restuarant by Manvinderjit`;
-    rootElement.appendChild(divFooter);    
+    document.body.appendChild(divFooter);    
 }
 
 const buildHeader = (divHeader) => {
@@ -49,6 +48,7 @@ const buildHeaderNavMenu = () => {
     })
     return navWrapper;    
 }
+
 
 const pageLoad = () => {   
     
