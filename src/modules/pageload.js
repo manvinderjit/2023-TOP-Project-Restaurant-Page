@@ -50,16 +50,6 @@ const buildHeaderNavMenu = () => {
     return navWrapper;    
 }
 
-const buildFooterAttributionsList = () => {
-
-    let content = `<a href="https://www.freepik.com/free-photo/interior-shot-cafe-with-chairs-near-bar-with-wooden-tables_7810365.htm#query=restaurant&position=49&from_view=search&track=sph">Image by wirestock</a> on Freepik`;
-
-    // https://icons8.com/icon/37113/restaurant-table
-    // <a target="_blank" href="https://icons8.com/icon/zWddXTfH7ZRf/restaurant">Dine</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-    return content;
-
-}
-
 const pageLoad = () => {   
     
     generateBasicHtmlStructure();
