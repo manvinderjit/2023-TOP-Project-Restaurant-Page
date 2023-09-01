@@ -9,17 +9,6 @@ const address = {
     "Cell": "1-409-316-7483"
 }
 
-const generateAddressContent = () => {
-    const divAddressContainer = createElement("div", "contact-address-container", "contact-address-container");
-    const divAddressContainerSubHeading = createElement("h3", "contact-address-container", "contact-address-container");
-    for(let field in address) {
-        const divAddressField = createElement("div", "contact-address-field");
-        divAddressField.textContent = `${field} : ${address[field]}`;
-        divAddressContainer.appendChild(divAddressField);        
-    }
-    return divAddressContainer;
-}
-
 const contactUsContent = () => {
     const mainElement = document.querySelector('main');
     mainElement.textContent = "";    
@@ -56,14 +45,24 @@ const createContactContentSection = () => {
     return divContactContentSectionWrapper;
 }
 
-const createContactAddressSection = () => {
 
+const generateAddressContent = () => {
     
+    const divAddressContainer = createElement("div", "contact-address-container", "contact-address-container");
+    for(const field in address) {
+        const divAddressField = createElement("div", "contact-address-field");
+        divAddressField.textContent = `${field} : ${address[field]}`;
+        divAddressContainer.appendChild(divAddressField);        
+    }
+    return divAddressContainer;
+}
+
+const createContactAddressSection = () => {
 
     const divContactAddressSection = createElement("div", "contact-address-section");
     
     const divContactAddressSectionHeading = createElement("h2", "contact-address-section-h2");
-    divContactAddressSectionHeading.textContent = "Our Locations:";
+    divContactAddressSectionHeading.textContent = "Our Location:";
     divContactAddressSection.appendChild(divContactAddressSectionHeading);
 
     const divContactAddressSectionAddress = generateAddressContent();
