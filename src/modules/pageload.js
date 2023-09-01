@@ -15,18 +15,21 @@ const createElement = (element, className, id) => {
 }
 
 const generateBasicHtmlStructure = () => {
+
+    const divBase = createElement("div", "content", "content");
+    document.body.appendChild(divBase);
     
     let divHeader = createElement("header");
-    document.body.appendChild(divHeader);    
+    divBase.appendChild(divHeader);    
     
     buildHeader(divHeader);
 
     let mainContainer = createElement("main");
-    document.body.appendChild(mainContainer);    
+    divBase.appendChild(mainContainer);    
 
     let divFooter = createElement("footer");
     divFooter.textContent = `Copright @ Awesome Restuarant by Manvinderjit`;
-    document.body.appendChild(divFooter);    
+    divBase.appendChild(divFooter);    
 }
 
 const buildHeader = (divHeader) => {
