@@ -14,6 +14,9 @@ const homeContent = () => {
 
     divHomeWrapper.appendChild(createHeroContent());
     
+    const attributionSection = createAttributionSection();
+    divHomeWrapper.appendChild(attributionSection);
+
     mainElement.appendChild(divHomeWrapper);
 }
 
@@ -65,6 +68,31 @@ const createHeroCard = (text, imgUrl, headingContent) => {
     divHomeHeroContentCard.appendChild(divCardText);
 
     return divHomeHeroContentCard;
+}
+
+
+const createAttributionSection = () => {
+
+    const divAttributionSection = createElement("div", "contact-attribution-section");
+
+    const divAttributionSectionHeading = createElement("h2", "contact-attribution-h2");
+    divAttributionSectionHeading.textContent = "Attributions:";
+    divAttributionSection.appendChild(divAttributionSectionHeading);
+
+    const divAttributionList = createElement("ol", "contact-attribution-list");
+    const divAttributionListItemHero = createElement("li", "contact-attribution-list-item");
+    divAttributionListItemHero.innerHTML = `Hero Image: <a href="https://www.freepik.com/free-photo/interior-shot-cafe-with-chairs-near-bar-with-wooden-tables_7810365.htm#query=restaurant&position=49&from_view=search&track=sph">Image by wirestock</a> on Freepik.`;
+    divAttributionList.appendChild(divAttributionListItemHero);
+
+
+    const divAttributionListItemIcons = createElement("li", "contact-attribution-list-item");
+    divAttributionListItemIcons.innerHTML = `<a href="https://icons8.com">Icons By Icons 8</a>.`;
+    divAttributionList.appendChild(divAttributionListItemIcons);
+    
+    divAttributionSection.appendChild(divAttributionList);
+    
+    return divAttributionSection;
+
 }
 
 
