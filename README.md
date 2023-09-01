@@ -13,3 +13,4 @@ The project serves as a basis for the implementation and demonstration of the fo
 
 The project can be viewed live at the following link:
 
+https://manvinderjit.github.io/2023-TOP-Project-Restaurant-Page/
