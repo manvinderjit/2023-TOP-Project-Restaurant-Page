@@ -38,6 +38,9 @@ const menuContent = () => {
     divMenuWrapper.appendChild(createMenuSection());
 
     mainElement.appendChild(divMenuWrapper);
+
+    const attributionSection = createAttributionSection();
+    mainElement.appendChild(attributionSection);
 }
 
 const createHeroImgSection = () => {
@@ -110,6 +113,24 @@ const createMenuCardContentList = (itemsArray) => {
     });
     
     return divMenuCardContentList;
+}
+
+const createAttributionSection = () => {
+
+    const divAttributionSection = createElement("div", "contact-attribution-section");
+
+    const divAttributionSectionHeading = createElement("h2", "contact-attribution-h2");
+    divAttributionSectionHeading.textContent = "Attributions:";
+    divAttributionSection.appendChild(divAttributionSectionHeading);
+
+    const divAttributionList = createElement("ol", "contact-attribution-list");
+    const divAttributionListItem = createElement("li", "contact-attribution-list-item");
+    divAttributionListItem.innerHTML = `Hero Image: <a href="https://www.freepik.com/free-photo/homemade-food-menu-recipe-recommended-restaurant_2761078.htm#query=food%20menu&position=18&from_view=search&track=ais">Image by rawpixel.com</a> on Freepik.`
+    divAttributionList.appendChild(divAttributionListItem);
+    divAttributionSection.appendChild(divAttributionList);
+
+    return divAttributionSection;
+
 }
 
 export { menuContent };
